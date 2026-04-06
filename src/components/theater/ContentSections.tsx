@@ -1,12 +1,15 @@
 import { useState } from "react";
 import Icon from "@/components/ui/icon";
 import { Section, THEATERS, EVENTS, GALLERY } from "./data";
+import TicketForm from "./TicketForm";
 
 interface TheatersProps {
   setActiveSection: (s: Section) => void;
 }
 
 export function TheatersSection({ setActiveSection: _setActiveSection }: TheatersProps) {
+  const [formTheater, setFormTheater] = useState<typeof THEATERS[0] | null>(null);
+
   return (
     <div className="pt-24 pb-20 px-6 max-w-7xl mx-auto">
       <div className="text-center mb-16">
@@ -57,10 +60,25 @@ export function TheatersSection({ setActiveSection: _setActiveSection }: Theater
                   <span className="font-display text-xs tracking-wide">{theater.shows} спектаклей</span>
                 </div>
               </div>
+              <button
+                onClick={() => setFormTheater(theater)}
+                className="mt-5 w-full py-3 font-display text-xs tracking-widest uppercase transition-all hover:opacity-80"
+                style={{ background: theater.accent, color: "#0d0d0d" }}
+              >
+                Записаться на спектакль
+              </button>
             </div>
           </div>
         ))}
       </div>
+
+      {formTheater && (
+        <TicketForm
+          theaterName={formTheater.short}
+          theaterAccent={formTheater.accent}
+          onClose={() => setFormTheater(null)}
+        />
+      )}
     </div>
   );
 }
