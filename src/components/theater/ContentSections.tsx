@@ -13,7 +13,7 @@ export function TheatersSection({ setActiveSection: _setActiveSection }: Theater
         <p className="font-display text-primary tracking-[0.4em] text-sm uppercase mb-3">Оренбург</p>
         <h1 className="font-display text-5xl md:text-7xl font-light uppercase tracking-wide mb-6">Наши театры</h1>
         <p className="font-body text-xl italic text-foreground/60 max-w-2xl mx-auto">
-          Четыре театра — четыре мира, каждый со своей уникальной историей и характером
+          Пять театров — пять миров, каждый со своей уникальной историей и характером
         </p>
       </div>
       <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
@@ -122,10 +122,46 @@ export function AboutSection() {
 
         <div className="text-center py-16 border-y border-border">
           <p className="font-body text-2xl md:text-3xl italic text-foreground/70 max-w-4xl mx-auto leading-relaxed mb-6">
-            «Театр — это прежде всего великая школа, и назначение его — воспитывать,
-            а вовсе не только развлекать публику»
+            «Кукольный театр — это особый мир, где всё возможно, где дерево оживает,
+            а тряпка становится душой»
           </p>
-          <p className="font-display text-sm tracking-widest text-primary uppercase">— Константин Станиславский</p>
+          <p className="font-display text-sm tracking-widest text-primary uppercase">— Сергей Образцов</p>
+        </div>
+
+        <div className="mt-20 mb-8">
+          <h2 className="font-display text-3xl uppercase tracking-widest text-center mb-12">
+            <span className="text-primary">—</span> Театр кукол Пьеро <span className="text-primary">—</span>
+          </h2>
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
+            <div className="relative overflow-hidden border border-border p-10 flex items-center justify-center" style={{ background: "linear-gradient(135deg, #1a1200, #2a1a00)" }}>
+              <span className="text-[120px] animate-float">🤡</span>
+            </div>
+            <div className="space-y-6">
+              <div>
+                <p className="font-display text-primary tracking-[0.4em] text-xs uppercase mb-2">Камерный театр</p>
+                <h3 className="font-display text-3xl uppercase tracking-wide mb-4">Театр кукол Пьеро</h3>
+                <p className="font-body text-lg italic text-foreground/60 leading-relaxed">
+                  Камерный театр кукол с авторскими постановками. Уникальные спектакли для детей и взрослых
+                  в неповторимой атмосфере. Театр создаёт постановки, в которых кукла становится не просто
+                  игрушкой, а живым персонажем с душой и характером.
+                </p>
+              </div>
+              <div className="grid grid-cols-2 gap-4">
+                <div className="p-4 border border-border">
+                  <p className="font-display text-xs tracking-widest text-foreground/40 uppercase mb-1">Основан</p>
+                  <p className="font-display text-xl" style={{ color: "#F5A623" }}>1990</p>
+                </div>
+                <div className="p-4 border border-border">
+                  <p className="font-display text-xs tracking-widest text-foreground/40 uppercase mb-1">Спектаклей</p>
+                  <p className="font-display text-xl" style={{ color: "#F5A623" }}>18</p>
+                </div>
+              </div>
+              <div className="flex items-center gap-2 text-foreground/50">
+                <Icon name="MapPin" size={14} />
+                <span className="font-display text-xs tracking-wide">ул. Терешковой, 251</span>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
     </div>

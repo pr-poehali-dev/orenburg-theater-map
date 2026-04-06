@@ -57,7 +57,7 @@ export default function HomeSection({ setActiveSection }: HomeSectionProps) {
 
           <div className="opacity-0 animate-fade-up delay-600 mt-20 grid grid-cols-3 gap-8 max-w-lg mx-auto" style={{ animationFillMode: "forwards" }}>
             {[
-              { num: "4", label: "Театра" },
+              { num: "5", label: "Театров" },
               { num: "127+", label: "Спектаклей" },
               { num: "155", label: "Лет истории" },
             ].map((stat) => (
