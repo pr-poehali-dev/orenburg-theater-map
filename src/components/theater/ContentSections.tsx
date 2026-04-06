@@ -81,41 +81,39 @@ export function AboutSection() {
       </div>
 
       <div className="max-w-7xl mx-auto px-6">
-        <div className="mb-24">
-          <h2 className="font-display text-3xl uppercase tracking-widest text-center mb-16">
-            <span className="text-primary">—</span> Ключевые даты <span className="text-primary">—</span>
-          </h2>
-          <div className="relative">
-            <div className="absolute left-1/2 top-0 bottom-0 w-px bg-border -translate-x-px hidden md:block" />
-            {[
-              { year: "1869", event: "Открытие Оренбургского драматического театра — одного из старейших в России" },
-              { year: "1930", event: "Основание Татарского драматического театра, хранителя национальной культуры" },
-              { year: "1935", event: "Открытие Театра кукол — волшебного мира для детей и взрослых" },
-              { year: "1946", event: "Создание театра Музыкальной комедии после победы в Великой Отечественной войне" },
-              { year: "2024", event: "Театры Оренбурга продолжают радовать зрителей более чем 127 постановками" },
-            ].map((item, i) => (
-              <div key={item.year} className={`flex items-center gap-8 mb-12 ${i % 2 === 0 ? "md:flex-row" : "md:flex-row-reverse"}`}>
-                <div className={`flex-1 ${i % 2 === 0 ? "md:text-right" : "md:text-left"}`}>
-                  <div className="font-display text-4xl text-primary font-light mb-2">{item.year}</div>
-                  <p className="font-body text-lg italic text-foreground/70 max-w-sm ml-auto">{item.event}</p>
-                </div>
-                <div className="hidden md:flex w-4 h-4 rounded-full bg-primary border-4 border-background flex-shrink-0" />
-                <div className="flex-1 hidden md:block" />
+        <div className="space-y-24 mb-24">
+          {THEATERS.map((theater, i) => (
+            <div key={theater.id} className={`grid grid-cols-1 md:grid-cols-2 gap-8 items-center ${i % 2 !== 0 ? "md:[&>*:first-child]:order-2" : ""}`}>
+              <div
+                className="relative overflow-hidden border border-border p-10 flex items-center justify-center h-64"
+                style={{ background: `linear-gradient(135deg, #0d0d0d, #1a1a1a)` }}
+              >
+                <div className={`absolute inset-0 bg-gradient-to-br ${theater.color} opacity-40`} />
+                <span className="text-[100px] animate-float relative z-10">{theater.emoji}</span>
               </div>
-            ))}
-          </div>
-        </div>
-
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-20">
-          {[
-            { icon: "Award", title: "Признание", text: "Театры Оренбурга — лауреаты федеральных и международных театральных премий" },
-            { icon: "Users", title: "Зрители", text: "Ежегодно театры посещают более 200 000 жителей и гостей Оренбурга" },
-            { icon: "Globe", title: "Гастроли", text: "Труппы театров регулярно выступают на сценах России и зарубежья" },
-          ].map((fact) => (
-            <div key={fact.title} className="p-8 border border-border hover:border-primary/30 transition-colors group">
-              <Icon name={fact.icon as "Award"} size={36} className="text-primary mb-5 group-hover:scale-110 transition-transform" />
-              <h3 className="font-display text-xl uppercase tracking-widest mb-4">{fact.title}</h3>
-              <p className="font-body text-lg italic text-foreground/60 leading-relaxed">{fact.text}</p>
+              <div className="space-y-6">
+                <div>
+                  <p className="font-display tracking-[0.4em] text-xs uppercase mb-2" style={{ color: theater.accent }}>
+                    Основан в {theater.founded}
+                  </p>
+                  <h3 className="font-display text-3xl uppercase tracking-wide mb-4">{theater.short}</h3>
+                  <p className="font-body text-lg italic text-foreground/60 leading-relaxed">{theater.description}</p>
+                </div>
+                <div className="grid grid-cols-2 gap-4">
+                  <div className="p-4 border border-border">
+                    <p className="font-display text-xs tracking-widest text-foreground/40 uppercase mb-1">Основан</p>
+                    <p className="font-display text-xl" style={{ color: theater.accent }}>{theater.founded}</p>
+                  </div>
+                  <div className="p-4 border border-border">
+                    <p className="font-display text-xs tracking-widest text-foreground/40 uppercase mb-1">Спектаклей</p>
+                    <p className="font-display text-xl" style={{ color: theater.accent }}>{theater.shows}</p>
+                  </div>
+                </div>
+                <div className="flex items-center gap-2 text-foreground/50">
+                  <Icon name="MapPin" size={14} />
+                  <span className="font-display text-xs tracking-wide">{theater.address}</span>
+                </div>
+              </div>
             </div>
           ))}
         </div>
@@ -126,42 +124,6 @@ export function AboutSection() {
             а тряпка становится душой»
           </p>
           <p className="font-display text-sm tracking-widest text-primary uppercase">— Сергей Образцов</p>
-        </div>
-
-        <div className="mt-20 mb-8">
-          <h2 className="font-display text-3xl uppercase tracking-widest text-center mb-12">
-            <span className="text-primary">—</span> Театр кукол Пьеро <span className="text-primary">—</span>
-          </h2>
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
-            <div className="relative overflow-hidden border border-border p-10 flex items-center justify-center" style={{ background: "linear-gradient(135deg, #1a1200, #2a1a00)" }}>
-              <span className="text-[120px] animate-float">🤡</span>
-            </div>
-            <div className="space-y-6">
-              <div>
-                <p className="font-display text-primary tracking-[0.4em] text-xs uppercase mb-2">Камерный театр</p>
-                <h3 className="font-display text-3xl uppercase tracking-wide mb-4">Театр кукол Пьеро</h3>
-                <p className="font-body text-lg italic text-foreground/60 leading-relaxed">
-                  Камерный театр кукол с авторскими постановками. Уникальные спектакли для детей и взрослых
-                  в неповторимой атмосфере. Театр создаёт постановки, в которых кукла становится не просто
-                  игрушкой, а живым персонажем с душой и характером.
-                </p>
-              </div>
-              <div className="grid grid-cols-2 gap-4">
-                <div className="p-4 border border-border">
-                  <p className="font-display text-xs tracking-widest text-foreground/40 uppercase mb-1">Основан</p>
-                  <p className="font-display text-xl" style={{ color: "#F5A623" }}>1990</p>
-                </div>
-                <div className="p-4 border border-border">
-                  <p className="font-display text-xs tracking-widest text-foreground/40 uppercase mb-1">Спектаклей</p>
-                  <p className="font-display text-xl" style={{ color: "#F5A623" }}>18</p>
-                </div>
-              </div>
-              <div className="flex items-center gap-2 text-foreground/50">
-                <Icon name="MapPin" size={14} />
-                <span className="font-display text-xs tracking-wide">ул. Терешковой, 251</span>
-              </div>
-            </div>
-          </div>
         </div>
       </div>
     </div>
