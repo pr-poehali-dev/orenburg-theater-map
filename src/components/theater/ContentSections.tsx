@@ -84,6 +84,8 @@ export function TheatersSection({ setActiveSection: _setActiveSection }: Theater
 }
 
 export function AboutSection() {
+  const [expanded, setExpanded] = useState<number | null>(null);
+
   return (
     <div className="pt-24 pb-20">
       <div className="relative py-24 px-6 text-center overflow-hidden">
@@ -101,7 +103,7 @@ export function AboutSection() {
       <div className="max-w-7xl mx-auto px-6">
         <div className="space-y-24 mb-24">
           {THEATERS.map((theater, i) => (
-            <div key={theater.id} className={`grid grid-cols-1 md:grid-cols-2 gap-8 items-center ${i % 2 !== 0 ? "md:[&>*:first-child]:order-2" : ""}`}>
+            <div key={theater.id} className={`grid grid-cols-1 md:grid-cols-2 gap-8 items-start ${i % 2 !== 0 ? "md:[&>*:first-child]:order-2" : ""}`}>
               <div
                 className="relative overflow-hidden border border-border p-10 flex items-center justify-center h-64"
                 style={{ background: `linear-gradient(135deg, #0d0d0d, #1a1a1a)` }}
@@ -131,6 +133,29 @@ export function AboutSection() {
                   <Icon name="MapPin" size={14} />
                   <span className="font-display text-xs tracking-wide">{theater.address}</span>
                 </div>
+
+                {"fullDescription" in theater && theater.fullDescription && (
+                  <div>
+                    <button
+                      onClick={() => setExpanded(expanded === theater.id ? null : theater.id)}
+                      className="flex items-center gap-2 font-display text-xs tracking-widest uppercase transition-colors hover:opacity-80"
+                      style={{ color: theater.accent }}
+                    >
+                      <Icon name={expanded === theater.id ? "ChevronUp" : "ChevronDown"} size={14} />
+                      {expanded === theater.id ? "Свернуть" : "Подробнее об истории"}
+                    </button>
+
+                    {expanded === theater.id && (
+                      <div className="mt-4 border-l-2 pl-5 space-y-4" style={{ borderColor: theater.accent }}>
+                        {(theater.fullDescription as string).split("\n\n").map((para, idx) => (
+                          <p key={idx} className="font-body text-base text-foreground/70 leading-relaxed">
+                            {para}
+                          </p>
+                        ))}
+                      </div>
+                    )}
+                  </div>
+                )}
               </div>
             </div>
           ))}
