@@ -69,12 +69,16 @@ export const THEATERS = [
 ];
 
 export const EVENTS = [
-  { id: 1, title: "Гроза", theater: "Драматический театр", date: "12 апреля", time: "19:00", genre: "Драма", price: "от 500 ₽" },
-  { id: 2, title: "Свадьба Фигаро", theater: "Музыкальная комедия", date: "14 апреля", time: "18:30", genre: "Оперетта", price: "от 700 ₽" },
-  { id: 3, title: "Буратино", theater: "Театр кукол", date: "15 апреля", time: "12:00", genre: "Сказка", price: "от 300 ₽" },
-  { id: 4, title: "Ромео и Джульетта", theater: "Драматический театр", date: "18 апреля", time: "19:00", genre: "Трагедия", price: "от 600 ₽" },
-  { id: 5, title: "Весёлая вдова", theater: "Музыкальная комедия", date: "20 апреля", time: "18:30", genre: "Мюзикл", price: "от 800 ₽" },
-  { id: 6, title: "Алдар Косе", theater: "Татарский театр", date: "22 апреля", time: "19:00", genre: "Комедия", price: "от 400 ₽" },
+  { id: 1, title: "Вишнёвый сад", theater: "Драматический театр", date: "3 мая", time: "19:00", genre: "Драма", price: "от 500 ₽" },
+  { id: 2, title: "Летучая мышь", theater: "Музыкальная комедия", date: "7 мая", time: "18:30", genre: "Оперетта", price: "от 700 ₽" },
+  { id: 3, title: "Дюймовочка", theater: "Театр кукол", date: "9 мая", time: "12:00", genre: "Сказка", price: "от 300 ₽" },
+  { id: 4, title: "Пьеро и Арлекин", theater: "Театр кукол Пьеро", date: "11 мая", time: "16:00", genre: "Фантазия", price: "от 350 ₽" },
+  { id: 5, title: "Ревизор", theater: "Драматический театр", date: "15 мая", time: "19:00", genre: "Комедия", price: "от 550 ₽" },
+  { id: 6, title: "Алтын Казан", theater: "Татарский театр", date: "18 мая", time: "18:00", genre: "Легенда", price: "от 400 ₽" },
+  { id: 7, title: "Сильва", theater: "Музыкальная комедия", date: "22 мая", time: "18:30", genre: "Оперетта", price: "от 750 ₽" },
+  { id: 8, title: "Три медведя", theater: "Театр кукол", date: "25 мая", time: "12:00", genre: "Сказка", price: "от 300 ₽" },
+  { id: 9, title: "Гроза", theater: "Драматический театр", date: "29 мая", time: "19:00", genre: "Драма", price: "от 500 ₽" },
+  { id: 10, title: "Зять из Парижа", theater: "Татарский театр", date: "31 мая", time: "18:00", genre: "Комедия", price: "от 400 ₽" },
 ];
 
 export const GALLERY = [
