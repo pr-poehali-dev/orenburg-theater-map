@@ -4,44 +4,44 @@
 
 @layer base {
   :root {
-    --background: 14 8% 6%;
-    --foreground: 36 60% 95%;
+    --background: 30 40% 97%;
+    --foreground: 20 20% 20%;
 
-    --card: 14 10% 9%;
-    --card-foreground: 36 60% 95%;
+    --card: 30 30% 94%;
+    --card-foreground: 20 20% 20%;
 
-    --popover: 14 10% 9%;
-    --popover-foreground: 36 60% 95%;
+    --popover: 30 30% 94%;
+    --popover-foreground: 20 20% 20%;
 
-    --primary: 15 85% 55%;
-    --primary-foreground: 14 8% 6%;
+    --primary: 340 50% 60%;
+    --primary-foreground: 0 0% 100%;
 
-    --secondary: 14 10% 14%;
-    --secondary-foreground: 36 60% 95%;
+    --secondary: 30 25% 90%;
+    --secondary-foreground: 20 20% 25%;
 
-    --muted: 14 10% 14%;
-    --muted-foreground: 36 20% 60%;
+    --muted: 30 25% 90%;
+    --muted-foreground: 20 15% 50%;
 
-    --accent: 45 95% 55%;
-    --accent-foreground: 14 8% 6%;
+    --accent: 25 70% 72%;
+    --accent-foreground: 20 20% 20%;
 
-    --destructive: 0 62.8% 30.6%;
-    --destructive-foreground: 36 60% 95%;
+    --destructive: 0 62.8% 50%;
+    --destructive-foreground: 0 0% 100%;
 
-    --border: 14 15% 18%;
-    --input: 14 15% 18%;
-    --ring: 15 85% 55%;
+    --border: 30 20% 85%;
+    --input: 30 20% 85%;
+    --ring: 340 50% 60%;
 
     --radius: 0.25rem;
 
-    --sidebar-background: 14 8% 6%;
-    --sidebar-foreground: 36 60% 95%;
-    --sidebar-primary: 15 85% 55%;
-    --sidebar-primary-foreground: 14 8% 6%;
-    --sidebar-accent: 14 10% 14%;
-    --sidebar-accent-foreground: 36 60% 95%;
-    --sidebar-border: 14 15% 18%;
-    --sidebar-ring: 15 85% 55%;
+    --sidebar-background: 30 40% 97%;
+    --sidebar-foreground: 20 20% 20%;
+    --sidebar-primary: 340 50% 60%;
+    --sidebar-primary-foreground: 0 0% 100%;
+    --sidebar-accent: 30 25% 90%;
+    --sidebar-accent-foreground: 20 20% 25%;
+    --sidebar-border: 30 20% 85%;
+    --sidebar-ring: 340 50% 60%;
   }
 }
 
@@ -95,12 +95,12 @@
 @keyframes glow-pulse {
   0%,
   100% {
-    box-shadow: 0 0 20px hsl(15 85% 55% / 0.3);
+    box-shadow: 0 0 20px hsl(340 50% 60% / 0.25);
   }
   50% {
     box-shadow:
-      0 0 60px hsl(15 85% 55% / 0.7),
-      0 0 100px hsl(45 95% 55% / 0.3);
+      0 0 60px hsl(340 50% 60% / 0.45),
+      0 0 100px hsl(25 70% 72% / 0.25);
   }
 }
 
@@ -175,10 +175,10 @@
 .shimmer-text {
   background: linear-gradient(
     90deg,
-    hsl(36 60% 95%),
-    hsl(45 95% 65%),
-    hsl(15 85% 65%),
-    hsl(36 60% 95%)
+    hsl(20 20% 20%),
+    hsl(340 50% 55%),
+    hsl(25 70% 65%),
+    hsl(20 20% 20%)
   );
   background-size: 200% auto;
   -webkit-background-clip: text;
@@ -206,7 +206,7 @@
   left: 0;
   width: 0;
   height: 1px;
-  background: hsl(15 85% 55%);
+  background: hsl(340 50% 60%);
   transition: width 0.3s ease;
 }
 
