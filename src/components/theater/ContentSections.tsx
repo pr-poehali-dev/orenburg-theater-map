@@ -106,7 +106,7 @@ export function AboutSection() {
             <div key={theater.id} className={`grid grid-cols-1 md:grid-cols-2 gap-8 items-start ${i % 2 !== 0 ? "md:[&>*:first-child]:order-2" : ""}`}>
               <div
                 className="relative overflow-hidden border border-border p-10 flex items-center justify-center h-64"
-                style={{ background: `linear-gradient(135deg, #f5ede8, #fdf0f5)` }}
+                style={{ background: `linear-gradient(135deg, #0d0d0d, #1a1a1a)` }}
               >
                 <div className={`absolute inset-0 bg-gradient-to-br ${theater.color} opacity-40`} />
                 <span className="text-[100px] animate-float relative z-10">{theater.emoji}</span>
